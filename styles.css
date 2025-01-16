@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh; /* Ensure full height */
+  display: flex;
+  flex-direction: column;
+}
+
+#game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#scrollable-area {
+  flex: 1;
+  overflow: auto; /* Allow scrolling */
+  position: relative;
+  margin-bottom: 30px; /* Prevent the footer from overlapping the scrollable area */
+}
+
+#landscape {
+  position: relative;
+  width: 2000px; /* Example size of the landscape */
+  height: 1500px;
+  background: url('landscape1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.object {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  font-size: .45rem;
+}
+
+footer h3 {
+  margin: 0;
+}
+
+#found-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+}
+
+#found-list li {
+  text-decoration: none;
+  color: white;
+}
+
+#found-list li.found {
+  text-decoration: line-through;
+  color: #888;
+}
+
+#tally {
+  margin: 0;
+}
+
+/* Media Query for Landscape Orientation */
+@media (orientation: landscape) {
+  footer {
+    font-size: .7rem; /* Larger font for landscape mode */
+  }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
+  footer {
+    font-size: .95rem; /* Even larger font for tablets and larger devices */
+  }
+}
+
+@media (min-width: 1024px) {
+  footer {
+    font-size: 20px; /* Even larger font for desktop */
+  }
+}
